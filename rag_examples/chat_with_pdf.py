@@ -120,6 +120,6 @@ def rag_with_bedrock(query):
     return result
 
 
-query = "What can you tell me about Amazon RDS?"
+query = "What are some good use cases for non-SQL databases?"
 print(query)
 print(rag_with_bedrock(query))

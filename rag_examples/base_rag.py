@@ -106,6 +106,6 @@ def rag_with_bedrock(query):
     return result
 
 
-query = "What type of pet do I have?"
+query = "What city do I work in?"
 print(query)
 print(rag_with_bedrock(query))

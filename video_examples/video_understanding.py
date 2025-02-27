@@ -6,7 +6,7 @@ import json
 import boto3
 
 
-def create_bedrock_client(region="us-west-2"):
+def create_bedrock_client(region="us-east-1"):
     """Create a Bedrock Runtime client in the specified AWS Region."""
     return boto3.client(
         "bedrock-runtime",
@@ -18,8 +18,7 @@ def encode_video_to_base64(video_path):
     """Open video file and encode it as a Base64 string."""
     with open(video_path, "rb") as video_file:
         binary_data = video_file.read()
-        # TODO return base64 encoded data
-        return
+        return base64.b64encode(binary_data).decode("utf-8")
 
 
 def create_request_payload(base64_string, system_prompt, user_prompt, temperature=0.7):
@@ -70,7 +69,7 @@ def main():
     SYSTEM_PROMPT = (
         "You are great at coming up with catchy titles to inspire the audience."
     )
-    USER_PROMPT = "Provide a 3 titles"
+    USER_PROMPT = "Generate detailed video summaries for content cataloging"
 
     client = create_bedrock_client()
     base64_string = encode_video_to_base64(VIDEO_PATH)

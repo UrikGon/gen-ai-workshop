@@ -1,6 +1,6 @@
 import boto3
 
-KB_ID = "TODO"
+KB_ID = "R5JNC2XKCF"
 QUERY = "What can you tell me about Amazon EC2?"
 REGION = "us-east-1"
 MODEL = "us.amazon.nova-lite-v1:0"
